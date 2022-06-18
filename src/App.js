@@ -1,22 +1,27 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-// import Search from "./components/searchsection";
-
-import MainProduct from "./containers/MainProduct";
-
+import Navbar from "./Components/Navbar";
 import Logo from "./assets/img/logo-32.png";
-import Shoe from "./assets/img/shoe.jpg";
+import Hero from "./Components/Hero";
+import Brand from "./Components/Brand";
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Navbar logo={Logo} />
-      <Hero />
-      {/* <Search /> */}
-      <MainProduct />
-      <div className="mb-40"></div>
-    </>
+    <Routes>
+      <Route path="/" element={<Index />} />
+    </Routes>
   );
 }
 
 export default App;
+
+function Index() {
+  return (
+    <>
+      <Navbar logo={Logo} />
+      <Hero />
+      <Brand />
+      <div className="mb-40"></div>
+    </>
+  );
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import CardProduct from "../components/CardProduct";
+import CardProduct from "../Components/CardProduct";
 import Product from "../data/Product";
 import Pattern from "./../assets/img/pattern.png";
 

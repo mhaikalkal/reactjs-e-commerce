@@ -10,7 +10,7 @@ const Searchbar = () => {
         </button>
       </span>
 
-      <input type="text" name="search" id="search" className="max-w-96 rounded-full px-3 py-1 bg-slate-200 placeholder:text-sm focus:outline hover:bg-slate-300" placeholder="Search" autoComplete="off" />
+      <input type="text" name="search" id="search" className="rounded-full px-3 py-1 bg-slate-200 placeholder:text-sm focus:outline hover:bg-slate-300" placeholder="Search" autoComplete="off" />
     </div>
   );
 };

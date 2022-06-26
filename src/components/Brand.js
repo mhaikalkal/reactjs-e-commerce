@@ -4,23 +4,25 @@ import Converse from "./../assets/img/Converse.png";
 import Nike from "./../assets/img/Nike.png";
 import Vans from "./../assets/img/Vans.png";
 
+import { Link } from "react-router-dom";
+
 const Brand = () => {
   return (
     <section id="brand" className="mt-4">
       <div className="container mx-auto border">
-        <div class="flex justify-between items-center flex-wrap">
-          <div className="brand-image w-64 border">
+        <div className="flex justify-center items-center gap-16 flex-wrap">
+          <Link to="/adidas" className="brand-image w-64 self-center">
             <img src={Adidas} alt="Adidas" className="bg-cover w-full" />
-          </div>
-          <div className="brand-image w-64 border">
+          </Link>
+          <Link to="/converse" className="brand-image w-64 self-center">
             <img src={Converse} alt="Converse" className="bg-cover w-full" />
-          </div>
-          <div className="brand-image w-64 border">
+          </Link>
+          <Link to="/nike" className="brand-image w-64 self-center">
             <img src={Nike} alt="Nike" className="bg-cover w-full" />
-          </div>
-          <div className="brand-image w-64 border">
+          </Link>
+          <Link to="/vans" className="brand-image w-64 self-center">
             <img src={Vans} alt="Vans" className="bg-cover w-full" />
-          </div>
+          </Link>
         </div>
       </div>
     </section>

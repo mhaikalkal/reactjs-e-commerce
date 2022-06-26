@@ -7,3 +7,35 @@
     @apply font-inter;
   }
 }
+
+@layer components {
+  /* .card-category {
+    @apply relative rounded-md shadow-md w-[32%] h-64 flex overflow-hidden hover:scale-95 transition duration-700;
+  } */
+
+  .card-category {
+    @apply shadow-md w-[32%] h-64;
+  }
+
+  .card-body {
+    @apply relative flex rounded-md overflow-hidden w-full h-full hover:scale-[.97] transition duration-700;
+  }
+
+  .card-category-img {
+    /* group-hover:blur-[1px] */
+    @apply w-full h-full object-cover group-hover:scale-125 transition duration-700;
+  }
+
+  .card-category-name {
+    /* self-center left-1/2 -translate-x-1/2 == buart nge center. */
+    @apply absolute self-center left-1/2 -translate-x-1/2 text-white text-2xl font-bold group-hover:scale-[1.05] transition duration-700;
+  }
+
+  .card-name-container {
+    @apply absolute flex self-center w-full px-3 py-2 bg-[rgba(0,0,0,0.5)];
+  }
+
+  .card-name {
+    @apply m-auto text-white font-bold text-xl;
+  }
+}

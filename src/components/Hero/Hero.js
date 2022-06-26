@@ -1,5 +1,6 @@
 import React from "react";
-// import Shoe from "./../assets/img/shoe.jpg";
+// import HeroBanner from "../../assets/img/hero.jpg";
+import Carousel from "./Carousel";
 
 function Hero() {
   return (
@@ -24,4 +25,15 @@ function Hero() {
   );
 }
 
-export default Hero;
+function HeroTest() {
+  return (
+    <section id="hero" className="mt-4 max-w-full">
+      <div className="container w-full overflow-hidden mx-auto rounded-md">
+        {/* <img src={HeroBanner} alt="shoes" className="w-full bg-contain" /> */}
+        <Carousel />
+      </div>
+    </section>
+  );
+}
+
+export default HeroTest;

@@ -1,27 +1,18 @@
-import Navbar from "./Components/Navbar";
-import Logo from "./assets/img/logo-32.png";
-import Hero from "./Components/Hero";
-import Brand from "./Components/Brand";
+// base routes
+import Routes from "./routes";
 
-import { Routes, Route } from "react-router-dom";
+// AOS
+import AOS from "aos"; // biar bisa dipake global
+import "aos/dist/aos.css";
+
+import { useEffect } from "react";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Index />} />
-    </Routes>
-  );
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  return <Routes />;
 }
 
 export default App;
-
-function Index() {
-  return (
-    <>
-      <Navbar logo={Logo} />
-      <Hero />
-      <Brand />
-      <div className="mb-40"></div>
-    </>
-  );
-}

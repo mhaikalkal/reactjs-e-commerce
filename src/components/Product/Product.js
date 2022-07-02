@@ -1,11 +1,65 @@
 import React from "react";
+import Card from "./Card";
+import FormProduct from "./FormProduct/FormProduct";
+
+const testData = [
+  {
+    id: 4,
+    brand: "Nike",
+    style: "Air Max",
+    name: "Nike Air Max 90",
+    slug: "nike-air-max-90",
+    thumbnail: "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_2.0/h_631,c_limit/87c8a5ba-e14e-4fa2-99c1-92bf822e875f/air-max-90-mens-shoes-D6ttcZ.png",
+    image: [
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_2.0/h_631,c_limit/87c8a5ba-e14e-4fa2-99c1-92bf822e875f/air-max-90-mens-shoes-D6ttcZ.png",
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_2.0/h_631,c_limit/87c8a5ba-e14e-4fa2-99c1-92bf822e875f/air-max-90-mens-shoes-D6ttcZ.png",
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_2.0/h_631,c_limit/87c8a5ba-e14e-4fa2-99c1-92bf822e875f/air-max-90-mens-shoes-D6ttcZ.png",
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_2.0/h_631,c_limit/87c8a5ba-e14e-4fa2-99c1-92bf822e875f/air-max-90-mens-shoes-D6ttcZ.png",
+    ],
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, rerum ipsum dolores tenetur voluptatum recusandae ipsa voluptatem dolor quos magnam alias vitae dolore sequi aspernatur. Illum error dolores minus omnis ut distinctio. Ut beatae quis perspiciatis quae voluptas debitis doloremque placeat aperiam ab, quibusdam accusamus illo corrupti incidunt architecto recusandae in animi eius corporis dolores provident? Consectetur consequuntur, quos veniam ex accusantium alias aperiam accusamus rem aut sunt, nemo quas similique quae eaque voluptate maxime voluptatum rerum numquam. Pariatur cumque illum neque illo consequuntur temporibus accusantium corrupti dolore! Porro harum blanditiis quia maiores libero quasi optio esse dolorem ut saepe.",
+    category: ["Lifestyle", "Men"],
+    variant: [
+      {
+        color: "green",
+        available: [
+          { size: 36, stock: 0 },
+          { size: 37, stock: 23 },
+          { size: 38, stock: 199 },
+          { size: 39, stock: 406 },
+          { size: 40, stock: 392 },
+          { size: 41, stock: 57 },
+          { size: 42, stock: 28 },
+          { size: 43, stock: 0 },
+          { size: 44, stock: 11 },
+        ],
+      },
+      {
+        color: "red",
+        available: [
+          { size: 37, stock: 23 },
+          { size: 38, stock: 199 },
+          { size: 39, stock: 0 },
+          { size: 40, stock: 392 },
+          { size: 41, stock: 57 },
+          { size: 42, stock: 28 },
+          { size: 43, stock: 0 },
+          { size: 44, stock: 11 },
+        ],
+      },
+    ],
+    price: 1600000,
+    sold: 88,
+    rating: 4.3,
+  },
+];
 
 const Product = () => {
   return (
     <section className="product mt-4">
-      <div className="container flex justify-between gap-5 mx-auto">
-        <div class="product-left border">Card</div>
-        <div class="product-right">
+      <div className="container flex justify-center gap-5 mx-auto">
+        <div className="product-left border">Card</div>
+        <div className="product-right">
           <div className="name-wrapper flex flex-col">
             <h1 className="product-name font-bold text-2xl">Nike Air Force 1 '07</h1>
             <span className="product-desc">Lifestyle</span>
@@ -17,117 +71,51 @@ const Product = () => {
           </div>
           {/* end price */}
 
-          <form className="">
-            {/* color pick */}
-            <div className="color mt-4">
-              <span className="font-bold self-center text-sm">Colors : </span>
-              <div className="grid grid-cols-5 gap-2">
-                <label>
-                  <input class="sr-only peer" name="color" type="radio" value="green" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center border bg-green-600 peer-checked:outline-dashed peer-checked:outline-slate-500 peer-checked:outline-offset-0 hover:cursor-pointer hover:outline-offset-0 hover:outline-dashed hover:outline-slate-400"></div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="color" type="radio" value="red" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center border bg-red-600 peer-checked:outline-dashed peer-checked:outline-slate-500 peer-checked:outline-offset-0 hover:cursor-pointer hover:outline-offset-0 hover:outline-dashed hover:outline-slate-400"></div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="color" type="radio" value="white" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center border bg-slate-100 peer-checked:outline-dashed peer-checked:outline-slate-500 peer-checked:outline-offset-0 hover:cursor-pointer hover:outline-offset-0 hover:outline-dashed hover:outline-slate-400"></div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="color" type="radio" value="blue" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center border bg-indigo-600 peer-checked:outline-dashed peer-checked:outline-slate-500 peer-checked:outline-offset-0 hover:cursor-pointer hover:outline-offset-0 hover:outline-dashed hover:outline-slate-400"></div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="color" type="radio" value="grey" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center border bg-slate-700 peer-checked:outline-dashed peer-checked:outline-slate-500 peer-checked:outline-offset-0 hover:cursor-pointer hover:outline-offset-0 hover:outline-dashed hover:outline-slate-400"></div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="color" type="radio" value="blue" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center border bg-slate-900 peer-checked:outline-dashed peer-checked:outline-slate-500 peer-checked:outline-offset-0 hover:cursor-pointer hover:outline-offset-0 hover:outline-dashed hover:outline-slate-400"></div>
-                </label>
-              </div>
-            </div>
-            {/* end color pick */}
-
-            {/* size pick */}
-            <div className="size mt-4">
-              <span className="font-bold self-center text-sm">Size : </span>
-              <div className="grid grid-cols-5 gap-2">
-                <label>
-                  <input class="sr-only peer" name="size" type="radio" value="35" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white hover:cursor-pointer border hover:border hover:border-slate-700">
-                    35
-                  </div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="size" type="radio" value="36" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white hover:cursor-pointer border hover:border hover:border-slate-700">
-                    36
-                  </div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="size" type="radio" value="37" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white hover:cursor-pointer border hover:border hover:border-slate-700">
-                    37
-                  </div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="size" type="radio" value="38" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white hover:cursor-pointer border hover:border hover:border-slate-700">
-                    38
-                  </div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="size" type="radio" value="39" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white hover:cursor-pointer border hover:border hover:border-slate-700">
-                    39
-                  </div>
-                </label>
-                <label>
-                  <input class="sr-only peer" name="size" type="radio" value="40" />
-                  <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white hover:cursor-pointer border hover:border hover:border-slate-700">
-                    40
-                  </div>
-                </label>
-              </div>
-            </div>
-            {/* end size pick */}
-
-            {/* Amount */}
-            <div className="amount mt-4">
-              <span className="font-bold self-center text-sm">Amount : </span>
-
-              <div className="flex">
-                <button type="button" className="px-2 bg-slate-300 hover:bg-slate-500 hover:text-white focus:outline-offsset-1 focus:outline-slate-400 active:bg-slate-900 active:text-white">
-                  -
-                </button>
-                <input type="text" name="" id="" className="border px-2 focus:outline text-xs" placeholder="Amount" />
-                <button type="button" className="px-2 bg-slate-300 hover:bg-slate-500 hover:text-white focus:outline-offsset-1 focus:outline-slate-400 active:bg-slate-900 active:text-white">
-                  +
-                </button>
-              </div>
-            </div>
-            {/* end amount */}
-
-            {/* button */}
-            <div className="button flex flex-col gap-2 mt-5">
-              <button type="button" className="py-2 px-2 border bg-slate-900 text-white text-sm hover:bg-slate-500 focus:outline focus:outline-slate-400 rounded-2xl">
-                Add to Bag
-              </button>
-              <button
-                type="button"
-                className="py-2 px-2 border border-red-600 hover:bg-red-600 hover:text-white text-red-600 text-sm focus:outline focus:outline-red-300 active:bg-red-800 active:text-white active:border-red-800 rounded-2xl"
-              >
-                Add to Wishlist
-              </button>
-            </div>
-            {/* end button */}
-          </form>
+          <FormProduct />
         </div>
       </div>
     </section>
   );
 };
 
-export default Product;
+const ProductTest = () => {
+  const product = testData;
+  return (
+    <section className="product mt-8">
+      {/* start container flex */}
+      <div className="container mx-auto flex flex-col-reverse justify-center gap-8 md:justify-between md:flex-row ">
+        <div className="product-left grid grid-cols-1 gap-2 flex-1 lg:grid-cols-2 max-w-full">
+          <Card img={product[0].image[0]} name={product[0].name} />
+          <Card img={product[0].image[0]} name={product[0].name} />
+          <Card img={product[0].image[0]} name={product[0].name} />
+        </div>
+
+        <div className="product-right max-w-full mx-auto flex-1">
+          {product.map((p) => {
+            return (
+              <React.Fragment key={p.id}>
+                <div className="product-desc">
+                  <h1 className="product-name font-bold text-2xl">{p.name}</h1>
+
+                  <p className="product-desc">{p.category.join(", ")}</p>
+
+                  <span className="product-price text-sm text-slate-500">Rp. {p.price}</span>
+
+                  <div className="description mt-4 text-sm">
+                    <span className="font-bold self-center">Description :</span>
+                    <p className="text-justify">{p.description}</p>
+                  </div>
+                </div>
+
+                <FormProduct product={product} />
+              </React.Fragment>
+            );
+          })}
+        </div>
+      </div>
+      {/* end container flex */}
+    </section>
+  );
+};
+
+export default ProductTest;

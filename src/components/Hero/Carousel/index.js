@@ -4,6 +4,7 @@ import hero2 from "../../../assets/img/hero/2.jpg";
 import hero3 from "../../../assets/img/hero/3.jpg";
 import "./carousel.css";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const carouselImage = [hero1, hero2, hero3];
 
@@ -74,14 +75,38 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative h-[550px]" ref={carouselRef}>
-      <div className="carousel bg-center h-full bg-no-repeat" style={{ backgroundImage: `url('${carouselImage[heroIndex]}')` }}></div>
+    <div className="relative h-[550px] overflow-hidden" ref={carouselRef}>
+      <div className="relative carousel bg-center h-full bg-no-repeat" style={{ backgroundImage: `url('${carouselImage[heroIndex]}')` }}>
+        <div className="absolute mx-auto inset-x-5 top-[50%] bg-[rgba(1,1,1,0.2)] rounded-lg lg:top-[25%] lg:inset-x-[7.5%] p-5">
+          <h1 className="text-white font-bold text-5xl">
+            Finest <span className="text-transparent bg-gradient-to-r from-red-600 to-pink-500 bg-clip-text hover:cursor-pointer">Footwear</span> for Finest Peoples
+          </h1>
 
-      <div className="absolute w-full flex top-1/2 -translate-y-1/2 px-3 py-3 justify-between items-center">
-        <button type="button" onClick={handlePrevClick}>
+          <p className="text-white font-semibold text-2xl">Improve your style</p>
+
+          <div className="mt-7">
+            <Link to="/prod">
+              <button className="px-3 py-2 rounded-md text-white text-xl font-semibold bg-slate-500 hover:bg-slate-700 active:bg-slate-800 focus:outline-dashed focus:outline-offset-2 focus:outline-slate-200">Shop Now!</button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* 
+        kan elemen next & prev ini width-nya 100% dipakein justify-between. jadi ditengahnya meskipun kosong sebenernya ada elemennya
+        defaultnya kita click ditengah-tengah itu sebenrnya bukan click hero. tapi si container button next prev
+        maka dengan pointer-events-none, si containernya di ignore.
+        untuk nge test. coba aja kasih bg color si containernya
+       */}
+      <div className="absolute w-full flex top-1/2 -translate-y-1/2 px-3 py-3 justify-between items-center pointer-events-none">
+        {/* 
+          button-nya harus di pointer-events-auto 
+          soalnya kalau enggak, ikut gabisa diclick
+         */}
+        <button type="button" onClick={handlePrevClick} className="pointer-events-auto">
           <AiOutlineArrowLeft size={35} />
         </button>
-        <button type="button" onClick={handleNextClick}>
+        <button type="button" onClick={handleNextClick} className="pointer-events-auto">
           <AiOutlineArrowRight size={35} />
         </button>
       </div>

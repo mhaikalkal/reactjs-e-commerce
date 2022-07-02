@@ -9,8 +9,7 @@ import CartContext from "../../context/CartContext";
 
 const Navbar = () => {
   // items merupakan nama state yg dikirim via cartcontext
-  const { items } = useContext(CartContext);
-  console.log(items);
+  const { cart } = useContext(CartContext);
 
   return (
     <nav className="sticky px-6 py-3 top-0 bg-white max-w-full shadow-lg z-50">
@@ -34,9 +33,9 @@ const Navbar = () => {
               <li className="relative">
                 <Link to="/cart">
                   <lord-icon src="https://cdn.lordicon.com/aoggitwj.json" trigger="hover" style={{ width: "32px", height: "32px" }} colors="primary:#000000">
-                    {items.length > 0 ? (
+                    {cart.length > 0 ? (
                       <div className="absolute top-0 right-0 rounded-full bg-red-600 h-3 w-3 flex">
-                        <div className="m-auto text-[8px] text-white">{items}</div>
+                        <div className="m-auto text-[8px] text-white">{cart.length}</div>
                       </div>
                     ) : (
                       ""

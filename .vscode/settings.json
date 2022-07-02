@@ -1,7 +1,0 @@
-{
-  "emmet.triggerExpansionOnTab": true,
-  "tailwindCSS.emmetCompletions": true,
-  "emmet.variables": {
-    "lang": "en"
-  }
-}

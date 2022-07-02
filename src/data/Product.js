@@ -309,42 +309,47 @@ const Data = [
     image: "",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, rerum ipsum dolores tenetur voluptatum recusandae ipsa voluptatem dolor quos magnam alias vitae dolore sequi aspernatur. Illum error dolores minus omnis ut distinctio. Ut beatae quis perspiciatis quae voluptas debitis doloremque placeat aperiam ab, quibusdam accusamus illo corrupti incidunt architecto recusandae in animi eius corporis dolores provident? Consectetur consequuntur, quos veniam ex accusantium alias aperiam accusamus rem aut sunt, nemo quas similique quae eaque voluptate maxime voluptatum rerum numquam. Pariatur cumque illum neque illo consequuntur temporibus accusantium corrupti dolore! Porro harum blanditiis quia maiores libero quasi optio esse dolorem ut saepe.",
-    for: ["Men, Women"],
-    category: ["Shoes"],
-    variant: [
-      {
-        size: 36,
-        stock: 33,
-      },
-      {
-        size: 37,
-        stock: 122,
-      },
-      {
-        size: 38,
-        stock: 422,
-      },
-      {
-        size: 39,
-        stock: 12,
-      },
-      {
-        size: 40,
-        stock: 4,
-      },
-      {
-        size: 41,
-        stock: 0,
-      },
-      {
-        size: 42,
-        stock: 77,
-      },
-      {
-        size: 43,
-        stock: 31,
-      },
-    ],
+    category: ["lifestyle"],
+    variant: {
+      green: [
+        {
+          size: 36,
+          stock: 33,
+        },
+        {
+          size: 37,
+          stock: 3,
+        },
+        {
+          size: 38,
+          stock: 133,
+        },
+        {
+          size: 39,
+          stock: 56,
+        },
+        {
+          size: 40,
+          stock: 102,
+        },
+        {
+          size: 41,
+          stock: 519,
+        },
+        {
+          size: 42,
+          stock: 5,
+        },
+        {
+          size: 43,
+          stock: 65,
+        },
+        {
+          size: 44,
+          stock: 29,
+        },
+      ],
+    },
     price: 1600000,
     sold: 88,
     rating: 4.3,

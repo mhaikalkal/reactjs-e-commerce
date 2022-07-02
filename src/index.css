@@ -6,6 +6,16 @@
   body {
     @apply font-inter;
   }
+
+  input[type="number"].amount {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 
 @layer components {
